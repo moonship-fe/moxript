@@ -1,0 +1,9 @@
+{
+  "name": "{{packageName}}",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "mox dev",
+    "build": "mox build"
+  }
+}
