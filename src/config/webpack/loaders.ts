@@ -1,3 +1,5 @@
+process.env.BABEL_ENV = 'development';
+
 const getCssLoader = () => {
     return {
         loader: 'css-loader',
@@ -11,7 +13,6 @@ export default () => {
     return [
         {
             test: /\.(js|mjs|jsx|ts|tsx)$/,
-            // include: paths.pluginPackagePath,
             loader: require.resolve('babel-loader'),
             options: {
                 presets: [

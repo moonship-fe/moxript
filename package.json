@@ -13,7 +13,7 @@
   "scripts": {
     "build": "rm -rf ./dist && tsc",
     "link": "chmod +x ./dist/index.js && yarn link '@moonship-fe/moxript' -g",
-    "build-link": "npm run build && npm run link"
+    "build-link": "yarn run build && yarn run link"
   },
   "keywords": [],
   "author": "",
