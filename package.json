@@ -40,6 +40,7 @@
     "ora": "^5.4.1",
     "postcss-loader": "^6.1.1",
     "readline": "^1.3.0",
+    "schema-utils": "^3.1.0",
     "simple-git": "^2.41.1",
     "style-loader": "^3.0.0",
     "webpack": "^5.44.0"

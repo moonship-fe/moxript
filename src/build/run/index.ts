@@ -1,10 +1,8 @@
 import webpack from 'webpack';
-
 import {generateWebpackConfig} from "../../config/webpack";
 
-export default async (pwd: string) => {
-    const config = generateWebpackConfig(pwd);
-    console.log(config);
+export default async (options: any) => {
+    const config = generateWebpackConfig(options);
     // @ts-ignore
     const compiler = webpack(config)
     compiler.run((err, stats) => {

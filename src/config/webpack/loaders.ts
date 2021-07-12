@@ -1,5 +1,3 @@
-process.env.BABEL_ENV = 'development';
-
 const getCssLoader = () => {
     return {
         loader: 'css-loader',
@@ -9,7 +7,9 @@ const getCssLoader = () => {
     }
 };
 
-export default () => {
+export default (options: any) => {
+    process.env.BABEL_ENV = options.env;
+
     return [
         {
             test: /\.(js|mjs|jsx|ts|tsx)$/,

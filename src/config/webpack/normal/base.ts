@@ -1,8 +1,10 @@
 import path from 'path';
 
-export default (cwd: string) => {
+export default (options: any) => {
+    const {cwd, env} = options;
+
     return {
-        mode: 'production',
+        mode: env,
         entry: path.join(cwd, './src/index.js'),
         output: {
             filename: '[name].[chunkhash].js',

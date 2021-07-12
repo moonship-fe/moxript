@@ -3,12 +3,12 @@ import baseConfig from './normal/base';
 import loadersConfig from './loaders';
 import pluginsConfig from './plugins';
 
-export const generateWebpackConfig = (cwd: string) => {
+export const generateWebpackConfig = (options: any) => {
     return {
-        ...baseConfig(cwd),
+        ...baseConfig(options),
         module: {
             rules: [
-                ...loadersConfig()
+                ...loadersConfig(options)
             ]
         },
         plugins: [
