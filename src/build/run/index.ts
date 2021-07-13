@@ -7,10 +7,8 @@ export default async (options: any) => {
     const compiler = webpack(config)
     compiler.run((err, stats) => {
         if (err) {
-            console.error(err);
             return;
         }
-        console.log(stats);
     });
 
 }

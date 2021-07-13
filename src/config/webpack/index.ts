@@ -12,7 +12,7 @@ export const generateWebpackConfig = (options: any) => {
             ]
         },
         plugins: [
-            ...pluginsConfig()
+            ...pluginsConfig(options)
         ]
     }
 }

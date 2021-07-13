@@ -1,16 +1,15 @@
-import run from './run';
-import {Command} from 'commander';
+// import path from "path";
+// import logger from "../utils/logger";
+import {getDefaultSettings} from "./base";
 
-const program = new Command();
-program
-    .option('-v, --valid', 'validate moxript settings')
-    .option('-f, --file <filepath>', 'moxript settings relative path');
+export const getSettings = (cwd: any) => {
+    // const location = path.join(cwd, 'moxript.config.js');
+    let settingExport = getDefaultSettings(cwd);
 
-(async () => {
-    program.parse();
-    const options = program.opts();
-    await run({
-        cwd: process.cwd(),
-        ...options
-    });
-})()
+    // try {
+    //     settingExport = require(location);
+    // } catch (e) {
+    //     logger.error('moxript settings load failed! Set default settings')
+    // }
+    return settingExport;
+}

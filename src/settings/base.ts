@@ -1,7 +1,12 @@
-const getDefaultSettings = () => {
+import path from "path";
+
+export const getDefaultSettings = (cwd: any) => {
     return {
-        publicPath: '/',
-        outputDir: 'dist',
-        appTitle: 'apple-banana'
+        publicPath: './',
+        outputDir: path.join(cwd, './dist'),
+        appTitle: 'apple-banana',
+        entry: {
+            name: 'index'
+        }
     }
 }

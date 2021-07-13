@@ -1,15 +1,17 @@
 import path from 'path';
 
 export default (options: any) => {
-    const {cwd, env} = options;
+    const {cwd, env, publicPath, outputDir, entry} = options;
 
     return {
         mode: env,
-        entry: path.join(cwd, './src/index.js'),
+        entry: {
+            [entry.name]: path.join(cwd, './src/index.js')
+        },
         output: {
             filename: '[name].[chunkhash].js',
-            path: path.join(cwd, 'dist'),
-            publicPath: '/assets/',
+            path: outputDir,
+            publicPath,
         },
     }
 }
