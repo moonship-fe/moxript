@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@types/dedent": "^0.7.0",
+    "@types/webpack-dev-server": "^3.11.5",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
     "chalk": "^4.1.1",
@@ -44,6 +45,7 @@
     "schema-utils": "^3.1.0",
     "simple-git": "^2.41.1",
     "style-loader": "^3.0.0",
-    "webpack": "^5.44.0"
+    "webpack": "^5.44.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
