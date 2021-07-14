@@ -9,6 +9,7 @@ program
     .command('build', 'build project', {executableFile: 'build/index'})
     .command('config', 'export config', {executableFile: 'config/index'})
     .command('settings', 'validate settings', {executableFile: 'settings/index'})
-    .command('run', 'run devSever', {executableFile: 'dev/index'});
+    .command('run', 'run devSever', {executableFile: 'dev/index'})
+    .command('play', 'debug a single component', {executableFile: 'play/index'});
 
 program.parse(process.argv);

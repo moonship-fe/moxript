@@ -6,7 +6,7 @@ export default (options: any) => {
     return {
         mode: env,
         entry: {
-            [entry.name]: path.join(cwd, './src/index.js')
+            [entry.name]: entry.file || path.join(cwd, './src/index.js')
         },
         output: {
             filename: '[name].[chunkhash].js',

@@ -24,6 +24,7 @@ export default (options: any) => {
                 inputSourceMap: true
             },
         },
+        ...options.loaders,
         {
             test: /\.css$/,
             use: [
