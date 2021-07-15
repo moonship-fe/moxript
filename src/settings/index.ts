@@ -1,3 +1,4 @@
+require('module-alias/register')
 // import path from "path";
 // import logger from "../utils/logger";
 import {getDefaultSettings} from "./base";

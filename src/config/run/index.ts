@@ -1,4 +1,4 @@
-import {generateWebpackConfig} from "../webpack";
+import {generateWebpackConfig} from "@/config/webpack";
 
 export default async (pwd: string) => {
     return generateWebpackConfig(pwd)

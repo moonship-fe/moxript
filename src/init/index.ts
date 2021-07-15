@@ -1,4 +1,5 @@
-import logger from "../utils/logger";
+require('module-alias/register')
+import logger from "@/utils/logger";
 import run from './run';
 
 (async () => {

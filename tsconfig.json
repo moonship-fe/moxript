@@ -10,7 +10,11 @@
     "skipLibCheck": true,
     "declaration": true,
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"],
+    }
   },
   "include": ["src"]
 }

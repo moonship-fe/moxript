@@ -1,4 +1,4 @@
-import HtmlWebpackPlugin, {Options as HTMLOptions} from 'html-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const getHtmlConfig = (filename: string, entry: any, options: any) => {
     const {name, template} = entry;

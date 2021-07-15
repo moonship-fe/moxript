@@ -1,6 +1,6 @@
+require('module-alias/register')
 import run from './run';
-import logger from "../utils/logger";
-import {getSettings} from "../settings";
+import {getSettings} from "@/settings";
 
 (async () => {
     const cwd = process.argv[2] || process.cwd();

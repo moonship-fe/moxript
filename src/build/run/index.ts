@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import {generateWebpackConfig} from "../../config/webpack";
+import {generateWebpackConfig} from "@/config/webpack";
 
 export default async (options: any) => {
     const config = generateWebpackConfig(options);

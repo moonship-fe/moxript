@@ -2,7 +2,7 @@ import path from "path";
 import webpack from 'webpack';
 // @ts-ignore
 import WebpackDevServer from "webpack-dev-server/lib/Server";
-import {generateWebpackConfig} from "../../config/webpack";
+import {generateWebpackConfig} from "@/config/webpack";
 
 export default async (options: any) => {
     const config = generateWebpackConfig(options);
