@@ -22,15 +22,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/dedent": "^0.7.0",
     "@types/inquirer": "^7.3.3",
     "@types/node": "^16.3.1",
     "@types/resolve": "^1.20.1",
+    "@types/webpack-dev-server": "^3.11.5",
+    "eslint": "^7.30.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.2.1",
-    "@types/dedent": "^0.7.0",
-    "@types/webpack-dev-server": "^3.11.5",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
     "chalk": "^4.1.1",
