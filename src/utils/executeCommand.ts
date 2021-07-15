@@ -20,6 +20,7 @@ const renderProgressBar = (curr: number, total: number) => {
     const incomplete = `-`.repeat(width - completeLength);
     toStartOfLine(process.stderr);
     process.stderr.write(`[${complete}${incomplete}]${bar}`)
+    console.log(233)
 };
 
 export const executeCommand = (command: string, args: string[], cwd: string) => {

@@ -1,7 +1,6 @@
 import {sync as resolve} from 'resolve';
-import {generateWebpackConfig} from "../../config/webpack";
+import {generateWebpackConfig} from "@/config/webpack";
 import webpack from "webpack";
-// @ts-ignore
 import WebpackDevServer from "webpack-dev-server/lib/Server";
 import path from "path";
 

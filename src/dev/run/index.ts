@@ -1,6 +1,4 @@
-import path from "path";
 import webpack from 'webpack';
-// @ts-ignore
 import WebpackDevServer from "webpack-dev-server/lib/Server";
 import {generateWebpackConfig} from "@/config/webpack";
 
