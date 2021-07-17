@@ -10,6 +10,6 @@ program
     .command('config', 'export config', {executableFile: 'config/index'})
     .command('settings', 'validate settings', {executableFile: 'settings/index'})
     .command('dev', 'run devSever', {executableFile: 'dev/index'})
-    .command('play', 'debug a single component', {executableFile: 'play/index'});
+    .command('play [entry-file]', 'debug a single component', {executableFile: 'play/index'});
 
 program.parse(process.argv);
