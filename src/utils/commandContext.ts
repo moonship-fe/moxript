@@ -6,6 +6,12 @@ export interface ICommandContext {
     settings: IBaseSettings
 }
 
+export interface IInitialProjectContext {
+    cwd: string,
+    packageName: string
+}
+
+
 export const generateCommandContext = (env: ICommandContext['env']): ICommandContext => {
     const cwd = process.cwd();
     return {

@@ -3,10 +3,16 @@ import logger from "@/utils/logger";
 import run from './run';
 
 (async () => {
-    const cwd = process.argv[2] || process.cwd();
-    // const options = await askForOptions();
-    await run(cwd, {
-        packageName: process.argv[2]
+    const cwd = process.cwd();
+    const packageName = process.argv[2];
+    if (!packageName) {
+        logger.error('Please input your project name')
+        return;
+    }
+
+    await run({
+        cwd,
+        packageName
     });
     logger.log('项目初始化完毕')
 })()

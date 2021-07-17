@@ -23,9 +23,9 @@ const renderProgressBar = (curr: number, total: number) => {
     console.log(233)
 };
 
-export const executeCommand = (command: string, args: string[], cwd: string) => {
+export const executeCommand = (command: string, args: string[], cwd: string): Promise<unknown> => {
     return new Promise(((resolve, reject) => {
-        const child = execa('yarn', ['install'], {
+        const child = execa(command, args, {
             cwd,
             stdio: ['inherit', 'inherit', 'pipe']
         });
@@ -45,7 +45,7 @@ export const executeCommand = (command: string, args: string[], cwd: string) => 
             process.stderr.write(buffer)
         });
 
-        child.on('close', (code: any) => {
+        child.on('close', (code: unknown) => {
             if (code !== 0) {
                 reject(new Error(`command failed: ${command} ${args.join(' ')}`));
                 return

@@ -1,9 +1,10 @@
+import {IInitialProjectContext} from "@/utils/commandContext";
 import copyTemplate from './copy';
 import installDependencies from './install';
-import initialGitRepo from './initialGit';
+import initialGitRepo from './initialGitRepo';
 
-export default async (cwd: string, options: any) => {
-    await copyTemplate(cwd, options);
-    await installDependencies(cwd, options);
-    await initialGitRepo(cwd, options);
+export default async (options: IInitialProjectContext): Promise<void> => {
+    await copyTemplate(options);
+    await installDependencies(options);
+    await initialGitRepo(options);
 }
