@@ -6,6 +6,7 @@ import {ICommandContext} from "@/utils/commandContext";
 import {Configuration} from "webpack";
 import {merge} from 'webpack-merge';
 import {get} from 'lodash';
+import path from "path";
 
 const getSettingsWebpackConfig = (commandContext: ICommandContext): Configuration => {
     const configureWebpack = get(commandContext, 'commandContext.settings.configureWebpack');
@@ -31,6 +32,12 @@ export const generateWebpackConfig = (commandContext: ICommandContext): Configur
             rules: [
                 ...loadersConfig(commandContext)
             ]
+        },
+        resolve: {
+            extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+            alias: {
+                '@': path.join(commandContext.cwd, './src'),
+            },
         },
         plugins: [
             ...pluginsConfig(commandContext)

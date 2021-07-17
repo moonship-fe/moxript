@@ -1,14 +1,14 @@
 import webpack from 'webpack';
 import WebpackDevServer from "webpack-dev-server/lib/Server";
 import {generateWebpackConfig} from "@/config/webpack";
+import {ICommandContext} from "@/utils/commandContext";
 
-export default async (options: any) => {
-    const config = generateWebpackConfig(options);
-    const devServerOptions = {};
+export default (commandContext: ICommandContext): void => {
+    const config = generateWebpackConfig(commandContext);
+    const devServer = commandContext.settings.devServer;
     const compiler = webpack(config);
-    const server = new WebpackDevServer(compiler, devServerOptions);
-
-    server.listen(8080, '127.0.0.1', () => {
-        console.log('Starting server on http://localhost:8080');
+    const server = new WebpackDevServer(compiler, devServer);
+    server.listen(devServer.port, devServer.host, () => {
+        console.log(`Starting server on http://${devServer.host}:${devServer.port}`);
     });
 }

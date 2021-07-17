@@ -7,7 +7,7 @@ const getWebpackEntries = (commandContext: ICommandContext) => {
     return Object.keys(pages).reduce((entry, key) => {
         return {
             ...entry,
-            [key]: pages[key].entry || path.join(cwd, './src/index.js')
+            [key]: pages[key].entry || path.join(cwd, `./src/pages/${key}/index.tsx`)
         }
     }, {})
 }
