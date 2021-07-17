@@ -11,8 +11,7 @@ const getHtmlPluginOption = (entryKey: string, page: IEntrySetting): HtmlWebpack
         meta: {
             viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
         },
-        filename,
-        template,
+        filename: filename ? filename : `${entryKey}.html`,
         chunks: [entryKey],
     }, template ? {template} : {})
 }
@@ -32,13 +31,3 @@ export const createHtmlInstance = (commandContext: ICommandContext): () => Webpa
 
     return () => pages;
 }
-
-// (prev, key) => {
-//     const page = commandContext.settings.pages[key];
-//     const pluginConfig = getHtmlConfig(page);
-//
-//     return [
-//         ...prev,
-//         new HtmlWebpackPlugin(pluginConfig)
-//     ]
-// }
