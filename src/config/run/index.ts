@@ -1,5 +1,7 @@
 import {generateWebpackConfig} from "@/config/webpack";
+import {ICommandContext} from "@/utils/commandContext";
+import {Configuration} from "webpack";
 
-export default async (pwd: string) => {
-    return generateWebpackConfig(pwd)
+export default (context: ICommandContext): Configuration => {
+    return generateWebpackConfig(context)
 }

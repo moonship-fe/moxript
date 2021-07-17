@@ -1,15 +1,25 @@
 import path from 'path';
+import {ICommandContext} from "@/utils/commandContext";
+import {Configuration} from "webpack";
 
-export default (options: any) => {
-    const {cwd, env, publicPath, outputDir, entry} = options;
+const getWebpackEntries = (commandContext: ICommandContext) => {
+    const {cwd, settings: {pages}} = commandContext;
+    return Object.keys(pages).reduce((entry, key) => {
+        return {
+            ...entry,
+            [key]: pages[key].entry || path.join(cwd, './src/index.js')
+        }
+    }, {})
+}
+
+export default (commandContext: ICommandContext): Configuration => {
+    const {env, settings: {publicPath, outputDir, filenameHashing}} = commandContext;
 
     return {
         mode: env,
-        entry: {
-            [entry.name]: entry.file || path.join(cwd, './src/index.js')
-        },
+        entry: getWebpackEntries(commandContext),
         output: {
-            filename: '[name].[chunkhash].js',
+            filename: filenameHashing ? '[name].[chunkhash].js' : '[name].js',
             path: outputDir,
             publicPath,
         },

@@ -1,3 +1,6 @@
+import {ICommandContext} from "@/utils/commandContext";
+import {RuleSetRule} from "webpack";
+
 const getCssLoader = () => {
     return {
         loader: 'css-loader',
@@ -7,8 +10,9 @@ const getCssLoader = () => {
     }
 };
 
-export default (options: any) => {
-    process.env.BABEL_ENV = options.env;
+export default (commandContext: ICommandContext): Array<RuleSetRule> => {
+    const {env} = commandContext;
+    process.env.BABEL_ENV = env;
 
     return [
         {
@@ -24,13 +28,11 @@ export default (options: any) => {
                 inputSourceMap: true
             },
         },
-        ...options.loaders,
         {
             test: /\.css$/,
             use: [
                 require.resolve('style-loader'),
                 getCssLoader(),
-                // TODO:: scope css
                 require.resolve('postcss-loader')
             ],
         },
@@ -39,7 +41,6 @@ export default (options: any) => {
             use: [
                 require.resolve('style-loader'),
                 getCssLoader(),
-                // TODO:: scope css
                 require.resolve('postcss-loader'),
                 require.resolve('less-loader'),
             ]
